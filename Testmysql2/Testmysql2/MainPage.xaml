@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Testmysql2.MainPage">
+    <StackLayout>
+        <Frame BackgroundColor="Blue" Padding="24" CornerRadius="0">
+            <Label Text="Mantenimiento de Usuarios" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontSize="26"></Label>
+        </Frame>
+        <Label Text="Usuario: "></Label>
+        <Entry x:Name="txtuser"></Entry>
+        <Label Text="Clave: "></Label>
+        <Entry x:Name="txtpass" IsPassword="true"></Entry>
+        <Button Text="Guardar" Clicked="Button_Clicked"></Button>
+
+        <ListView x:Name="lstUser">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding user}" TextColor="Red"></Label>
+                            <Label Text="{Binding estado}" TextColor="Red"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        
+    </StackLayout>
+</ContentPage>
